@@ -1,0 +1,7 @@
+.tasks {
+    list-style-type: none;
+    background-color: var(--card-bg-color);
+    border-radius: 0.4rem;
+    margin-top: 1rem;
+    box-shadow: 0rem 1rem 1rem -0.5rem rgb(0 0 0 / 10%);
+}

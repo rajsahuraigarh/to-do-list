@@ -1,0 +1,60 @@
+.form {
+    margin-top: 1.9rem;
+    background-color: var(--card-bg-color);
+    display: flex;
+    align-items: center;
+    height: 2.7rem;
+    border-radius: 0.4rem;
+    padding-inline: 1.1rem;
+}
+
+.form__submit {
+    align-self: center;
+    justify-self: center;
+    border-radius: 50%;
+    border: none;
+    height: 1.1rem;
+    width: 1.1rem;
+    border: solid 0.01rem var(--border-color);
+    background-color: white;
+    position: relative;
+}
+
+.form__submit:hover {
+    background-image: url("../../../images/icon-check.svg"),var(--check-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.form__submit::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+    width: 0.95rem;
+    height: 0.85rem;
+    border-radius: 50%;
+    background-color: var(--card-bg-color);
+    z-index: 0;
+}
+
+.form__submit:hover + .form__submit::after {
+    z-index: 1;
+    display: block;
+}
+
+.form__input {
+    width: 85%;
+    margin-left: 0.7rem;
+    border: none;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+    font-size: 0.7rem;
+    letter-spacing: 0.01rem;
+    font-family: Josefin;
+    color: var(--task-text-color);
+    background-color: var(--card-bg-color);
+    outline: none;
+}

@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading {
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+}
+
+.theme-btn {
+    background: none;
+    border: none;
+}
+
+.theme-btn:hover {
+    cursor: pointer;
+}
+
+.theme-img {
+    width: 1.1rem;
+}

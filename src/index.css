@@ -1,0 +1,313 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+Declare global variables here for now and use them in
+the different CSS files for each component
+*/
+
+:root {
+  font-size: 18px;
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-bg: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+  /* Light Theme */
+  --vl-gray: hsl(0, 0%, 98%);
+  --vl-gray-blue: hsl(236, 33%, 92%);
+  --l-gray-blue: hsl(233, 11%, 84%);
+  --d-gray-blue: hsl(236, 9%, 61%);
+  --vd-gray-blue: hsl(235, 19%, 35%);
+  --bg-image-light: url("./images/bg-mobile-light.jpg");
+
+  /* Dark Theme */
+  --vd-blue: hsl(235, 21%, 11%);
+  --vd-desat-blue: hsl(235, 24%, 19%);
+  --l-gray-blue_dark: hsl(234, 39%, 85%);
+  --l-gray-blue_dark-hover: hsl(236, 33%, 92%);
+  --d-gray-blue_dark: hsl(234, 11%, 52%);
+  --vd-gray-blue_dark: hsl(233, 14%, 35%);
+  --vd-gray-blue_dark2: hsl(237, 14%, 26%);
+  --bg-image-dark: url("./images/bg-mobile-dark.jpg");
+
+  /* Variables actually used */
+  --bg-image: var(--bg-image-light);
+  --bg-color: var(--vl-gray);
+  --card-bg-color: white;
+  --task-text-color: var(--vd-gray-blue);
+  --taskinfo-text-color: var(--d-gray-blue);
+  --text-hover-color: black;
+  --text-finished-color: var(--l-gray-blue);
+  --border-color: var(--l-gray-blue);
+  --z-index: 0;
+}
+
+@font-face {
+  font-family: Josefin;
+  src: url('./fonts/JosefinSans-VariableFont_wght.ttf');
+}
+
+body {
+    font-family: Josefin;
+    min-height: 100vh;
+    display: block;
+    background-color: var(--bg-color);
+    background-image: var(--bg-image);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+}
+
+@media screen and (min-width: 480px) and (max-width: 511px) {
+  :root {
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 512px) and (max-width: 767px) {
+  :root {
+    font-size: 9px;
+    --bg-image-light: url("./images/bg-desktop-light.jpg");
+    --bg-image-dark: url("./images/bg-desktop-dark.jpg");
+  }
+
+  .App.App {
+    width: 21.5rem;
+    padding-top: 3.1rem;
+  }
+
+  .form.form {
+    margin-top: 1.5rem;
+    border-radius: 0.3rem;
+  }
+
+  .form__submit::before {
+    width: 0.9rem !important;
+    height: 0.9rem !important;
+  }
+
+  .tasks.tasks {
+    border-radius: 0.3rem;
+  }
+  
+  .task__checkbox.task__checkbox {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .task__text.task__text {
+    font-size: 0.7rem;
+  }
+
+  .task__input:checked ~ .task__checkbox {
+    background-size: 0.6rem, contain !important;
+  }
+
+  .task__delete-btn {
+    display: none;
+  }
+
+  .task__container:hover > .task__delete-btn {
+    display: block;
+  }
+
+  .info--desktop.info--desktop {
+    display: flex;
+  }
+
+  .info.info,
+  .filter.filter {
+    display: none;
+  }
+
+  .drag.drag {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    font-size: 13px;
+    --bg-image-light: url("./images/bg-desktop-light.jpg");
+    --bg-image-dark: url("./images/bg-desktop-dark.jpg");
+  }
+
+  .App.App {
+    width: 21.5rem;
+    padding-top: 3.1rem;
+  }
+
+  .form.form {
+    margin-top: 1.5rem;
+    border-radius: 0.3rem;
+  }
+
+  .form__submit::before {
+    width: 0.9rem !important;
+    height: 0.9rem !important;
+  }
+
+  .tasks.tasks {
+    border-radius: 0.3rem;
+  }
+
+  .task__checkbox.task__checkbox {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .task__text.task__text {
+    font-size: 0.7rem;
+  }
+
+  .task__input:checked ~ .task__checkbox {
+    background-size: 0.6rem, contain !important;
+  }
+
+  .task__delete-btn {
+    display: none;
+  }
+
+  .task__container:hover > .task__delete-btn {
+    display: block;
+  }
+
+  .info--desktop.info--desktop {
+    display: flex;
+  }
+
+  .info.info,
+  .filter.filter {
+    display: none;
+  }
+
+  .drag.drag {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  :root {
+    font-size: 18px;
+    --bg-image-light: url("./images/bg-desktop-light.jpg");
+    --bg-image-dark: url("./images/bg-desktop-dark.jpg");
+  }
+
+  .App.App {
+    width: 21.5rem;
+    padding-top: 3.1rem;
+  }
+
+  .form.form {
+    margin-top: 1.5rem;
+    border-radius: 0.3rem;
+  }
+
+  .form__submit::before {
+    width: 0.9rem !important;
+    height: 0.9rem !important;
+  }
+
+  .tasks.tasks {
+    border-radius: 0.3rem;
+  }
+
+  .task__checkbox.task__checkbox {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .task__text.task__text {
+    font-size: 0.7rem;
+  }
+
+  .task__input:checked ~ .task__checkbox {
+    background-size: 0.6rem, contain !important;
+  }
+
+  .task__delete-btn {
+    display: none;
+  }
+
+  .task__container:hover > .task__delete-btn {
+    display: block;
+  }
+
+  .info--desktop.info--desktop {
+    display: flex;
+  }
+
+  .info.info,
+  .filter.filter {
+    display: none;
+  }
+
+  .drag.drag {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  :root {
+    font-size: 25px;
+    --bg-image-light: url("./images/bg-desktop-light.jpg");
+    --bg-image-dark: url("./images/bg-desktop-dark.jpg");
+  }
+
+  .App.App {
+    width: 21.5rem;
+    padding-top: 3.1rem;
+  }
+
+  .form.form {
+    margin-top: 1.5rem;
+    border-radius: 0.3rem;
+  }
+
+  .form__submit::before {
+    width: 0.9rem !important;
+    height: 0.9rem !important;
+  }
+
+  .tasks.tasks {
+    border-radius: 0.3rem;
+  }
+
+  .task__checkbox.task__checkbox {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .task__text.task__text {
+    font-size: 0.7rem;
+  }
+
+  .task__input:checked ~ .task__checkbox {
+    background-size: 0.6rem, contain !important;
+  }
+
+  .task__delete-btn {
+    display: none;
+  }
+
+  .task__container:hover > .task__delete-btn {
+    display: block;
+  }
+
+  .info--desktop.info--desktop {
+    display: flex;
+  }
+
+  .info.info,
+  .filter.filter {
+    display: none;
+  }
+
+  .drag.drag {
+    font-size: 0.5rem;
+  }
+}

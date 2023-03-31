@@ -1,0 +1,53 @@
+.info--desktop {
+    height: 2.5rem;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1.1rem;
+    background-color: var(--card-bg-color);
+    border-radius: inherit;
+}
+
+.info__left--desktop,
+.info__clear--desktop {
+    font-size: 0.6rem;
+    letter-spacing: 0.01rem;
+    border: none;
+    background: none;
+    font-family: Josefin;
+    color: var(--taskinfo-text-color);
+}
+
+.info__clear--desktop:hover {
+    color: var(--text-hover-color);
+    cursor: pointer;
+}
+
+.filter--desktop {
+    background-color: var(--card-bg-color);
+    border-radius: 0.4rem;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 1rem;
+}
+
+.filter__btn--desktop {
+    border: none;
+    background: none;
+    font-family: Josefin;
+    font-weight: 700;
+    font-size: 0.6rem;
+    color: var(--taskinfo-text-color);
+    letter-spacing: 0.01rem;
+    margin-inline: 0.35rem;
+}
+
+.filter__btn--desktop:hover {
+    color: var(--text-hover-color);
+    cursor: pointer;
+}
+
+.filter__btn--desktop--selected.filter__btn--desktop--selected {
+    color: var(--bright-blue);
+    cursor: default;
+}

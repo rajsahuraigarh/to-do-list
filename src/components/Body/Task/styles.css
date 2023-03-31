@@ -1,0 +1,113 @@
+.task {
+    border-bottom: solid 0.01rem var(--border-color);
+    color: var(--task-text-color);
+}
+
+.task__container {
+    display: grid;
+    grid-template-columns: 85% auto;
+    align-items: center;
+    padding-inline: 1.1rem;
+    justify-content: space-between;
+    height: 3.2rem;
+    cursor: grab;
+}
+
+.task--dragging {
+    opacity: 0.4;
+}
+
+.task__container:active {
+    cursor: grabbing;
+}
+
+.task__info {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.task__input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    cursor: pointer;
+}
+
+.task__input:checked ~ .task__checkbox {
+    background-image: url("../../../images/icon-check.svg"),var(--check-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.task__input:checked ~ .task__checkbox::before {
+    display: none;
+}
+
+.task__checkbox {
+    top: 0;
+    left: 0;
+    height: 1.1rem;
+    width: 1.1rem;
+    border-radius: 50%;
+    border: solid 0.01rem var(--border-color);
+    position: relative;
+}
+
+.task__checkbox:hover {
+    background-image: url("../../../images/icon-check.svg"),var(--check-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.task__checkbox::before {
+    content: '';
+    position: absolute;
+    height: 0.95rem;
+    width: 0.95rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--card-bg-color);
+    border-radius: 50%;
+    z-index: var(--z-index);
+}
+
+.task__text {
+    font-size: 0.6rem;
+    letter-spacing: 0.01rem;
+    margin-left: 0.7rem;
+}
+
+.task__text--finished {
+    color: var(--text-finished-color);
+    text-decoration: line-through;
+}
+
+.task__text:hover {
+    cursor: pointer;
+}
+
+.task__delete-btn {
+    background: none;
+    border: none;
+    width: 0.8rem;
+    height: 0.8rem;
+    opacity: 0.7;
+    position:relative;
+}
+
+.task__delete-btn:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.task__delete-img {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
